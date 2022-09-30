@@ -1,3 +1,5 @@
+@import '../../../styles/colors';
+
 .slider {
   display: flex;
   flex-direction: column;
@@ -5,9 +7,10 @@
   height: 35rem;
   position: relative;
   .slide {
-    position: relative;
+    position: absolute;
     display: flex;
     height: 35rem;
+    width: 100%;
     &-bg {
       position: relative;
       display: flex;
@@ -23,7 +26,7 @@
         background-image: linear-gradient(
           90deg,
           rgba(0, 0, 0, 1) 0%,
-          rgba(0, 0, 0, 1) 25%,
+          rgba(0, 0, 0, 1) 15%,
           rgba(255, 255, 255, 0) 100%
         );
       }
@@ -35,8 +38,43 @@
     }
     &-pane {
       position: absolute;
-      top: 200px;
-      left: 200px;
+      width: 45%;
+      top: 5rem;
+      left: 5rem;
+      .name {
+        font-size: 2.8rem;
+      }
+      .meta {
+        font-size: 1.4rem;
+        color: $lightGray;
+        .info {
+          display: flex;
+          align-items: center;
+          > span {
+            &:not(:last-child)::after {
+              content: '|';
+              margin-right: 9px;
+              margin-left: 9px;
+            }
+          }
+          .rating {
+            display: flex;
+            align-items: center;
+            .app-icon {
+              margin-right: 5px;
+              color: gold;
+            }
+            &-value{
+              color: white;
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
+      .desc {
+        font-size: 1.2rem;
+        line-height: 1.6;
+      }
     }
   }
 }
