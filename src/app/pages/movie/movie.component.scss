@@ -18,11 +18,9 @@
 .poster {
   max-width: 100%;
 }
-
 .overview {
   line-height: 1.5;
 }
-
 .stat {
   display: flex;
   margin-bottom: 15px;
@@ -30,12 +28,10 @@
     width: 150px;
     font-weight: bold;
   }
-
   .value {
     color: $primaryColor;
   }
 }
-
 .actor {
   padding: 10px;
   img {
