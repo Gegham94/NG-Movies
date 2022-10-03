@@ -51,10 +51,32 @@
       </div>
     </p-tabPanel>
     <p-tabPanel header="Videos">
-      Videos
+      <div class="grid">
+        <ng-container *ngFor="let movieVideo of movieVideos">
+          <div class="col-12 md:col-4 lg:col-4">
+            <app-video-embed [key]="movieVideo.key" [site]="movieVideo.site"></app-video-embed>
+          </div>
+        </ng-container>
+      </div>
     </p-tabPanel>
     <p-tabPanel header="Photos">
-      Photos
+      <div class="grid">
+        <ng-container *ngFor="let movieImage of movieImages?.backdrops">
+          <div class="col-12 md:col-4 lg:col-4">
+            <p-image [src]="imagesSizes.large + movieImage.file_path" alt="Image" width="100%" [preview]="true">
+            </p-image>
+          </div>
+        </ng-container>
+      </div>
     </p-tabPanel>
   </p-tabView>
+  <p-carousel [numVisible]="8" *ngIf="movieCredits" [value]="movieCredits.cast">
+    <ng-template let-actor pTemplate="item">
+      <div class="actor">
+        <img [src]="imagesSizes.medium + actor.profile_path" alt="Image">
+        <span>{{ actor.name }}</span>
+      </div>
+    </ng-template>
+  </p-carousel>
+  <!-- <items-banner [items]="similarMovies" title="Similar Movies"></items-banner> -->
 </ng-container>

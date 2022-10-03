@@ -4,8 +4,9 @@ import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-import { Movie, MovieDto } from './../models/movie';
+import { Movie, MovieDto, MovieVideoDto, MovieImages, MovieCredits } from './../models/movie';
 import { TvDto } from '../models/tv';
+import { GenresDto } from '../models/genre';
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +28,38 @@ export class MoviesService {
     return this.http.get<Movie>(`${this.API_URL}/movie/${id}?api_key=${this.API_KEY}`);
   }
 
-  searchMovies(page: number) {
-    return this.http.get<MovieDto>(`${this.API_URL}/movie/popular?page=${page}&api_key=${this.API_KEY}`)
+  getMovieVideos(id: string) {
+    return this.http.get<MovieVideoDto>(`${this.API_URL}/movie/${id}/videos?api_key=${this.API_KEY}`)
+    .pipe(switchMap(res => {
+      return of (res.results);
+    }));
+  }
+
+  getMoviesGenres() {
+    return this.http.get<GenresDto>(`${this.API_URL}/genre/movie/list?api_key=${this.API_KEY}`)
+    .pipe(switchMap(res => {
+      return of (res.genres);
+    }));
+  }
+
+  getMovieByGenre(genreId: string, pageNumber: number) {
+    return this.http.get<MovieDto>(`${this.API_URL}/discover/movie?with_genres=${genreId}&page=${pageNumber}&api_key=${this.API_KEY}`)
+    .pipe(switchMap(res => {
+      return of (res.results);
+    }));
+  }
+
+  getMovieImages(id: string) {
+    return this.http.get<MovieImages>(`${this.API_URL}/movie/${id}/images?api_key=${this.API_KEY}`);
+  }
+
+  getMovieCredits(id: string) {
+    return this.http.get<MovieCredits>(`${this.API_URL}/movie/${id}/credits?api_key=${this.API_KEY}`);
+  }
+
+  searchMovies(page: number, searchValue?: string) {
+    const uri = searchValue ? '/search/movie' : '/movie/popular'
+    return this.http.get<MovieDto>(`${this.API_URL}${uri}?page=${page}&query=${searchValue}&api_key=${this.API_KEY}`)
     .pipe(switchMap(res => {
       return of (res.results);
     }));
@@ -40,4 +71,5 @@ export class MoviesService {
       return of (res.results.slice(0, count));
     }));
   }
+
 }
