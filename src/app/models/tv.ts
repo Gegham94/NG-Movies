@@ -8,3 +8,31 @@ export interface TvDto {
   total_results: number;
   total_pages: number;
 }
+
+export interface Genre {
+  id: number;
+  name: string;
+}
+
+export interface TvVideoDto {
+  id: string;
+  results: TvVideo[];
+}
+
+export interface TvVideo {
+  site: string;
+  key: string;
+}
+
+export interface TvImages {
+  backdrops: {
+    file_path: string;
+  }[];
+}
+
+export interface TvCredits {
+  cast: {
+    name: string;
+    profile_path: string;
+  }[];
+}

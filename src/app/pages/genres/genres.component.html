@@ -1,8 +1,15 @@
 <div class="container">
   <h1>Movies Genres</h1>
   <div class="grid">
-    <div *ngFor="let genre of genres" class="col-6 md:col-3 lg:col-2">
-      <a class="genre-link" [routerLink]="'/movies/genres/' + genre.id">{{genre.name}}</a>
+    <div *ngFor="let moviesGenre of moviesGenres" class="col-4 md:col-3 lg:col-2">
+      <a class="genre-link" [routerLink]="'/movies/genres/' + moviesGenre.id">{{moviesGenre.name}}</a>
+    </div>
+  </div>
+
+  <h1>TV Shows Genres</h1>
+  <div class="grid">
+    <div *ngFor="let tvShowsGenre of tvShowsGenres" class="col-4 md:col-3 lg:col-2">
+      <a class="genre-link" [routerLink]="'/tv/genres/' + tvShowsGenre.id">{{tvShowsGenre.name}}</a>
     </div>
   </div>
 </div>
