@@ -1,8 +1,11 @@
 <div class="container">
   <h2>{{title}}</h2>
   <div class="grid">
-    <div class="col-6 md:col-3 lg:col-2" *ngFor="let item of items">
-      <app-item [itemData]="item"></app-item>
+    <div class="col-6 md:col-3 lg:col-2" *ngFor="let movieItem of movieItems">
+      <app-item [movieItemData]="movieItem"></app-item>
+    </div>
+    <div class="col-6 md:col-3 lg:col-2" *ngFor="let tvShowitem of tvShowitems">
+      <app-item [tvShowitemData]="tvShowitem"></app-item>
     </div>
   </div>
 </div>
