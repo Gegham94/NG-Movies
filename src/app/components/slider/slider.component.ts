@@ -27,7 +27,7 @@ export class SliderComponent implements OnInit {
     if(!this.isBanner){
       setInterval(() => {
         this.currentSlideIndex = ++this.currentSlideIndex % this.items.length;
-      },4000);
+      },114000);
     }
   }
 }

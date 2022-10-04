@@ -38,7 +38,7 @@
     }
     &-pane {
       position: absolute;
-      width: 45%;
+      width: 50%;
       top: 5rem;
       left: 5rem;
       .name {
@@ -71,9 +71,29 @@
           }
         }
       }
+      .desc::-webkit-scrollbar{
+        width: 2px;
+        display: none;
+      }
+      @media(max-width: 860px) {
+        .desc::-webkit-scrollbar{
+          display: block;
+        }
+      }
+      .desc::-webkit-scrollbar-track{
+        border-radius: 5px;
+        background-color: $lightGray;
+      }
+      .desc::-webkit-scrollbar-thumb{
+        border-radius: 5px;
+        background-color: $primaryColor;
+      }
       .desc {
         font-size: 1.2rem;
         line-height: 1.6;
+        max-height: 180px;
+        overflow-y: scroll;
+        padding-right: 10px;
       }
     }
   }
