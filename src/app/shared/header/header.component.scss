@@ -6,15 +6,19 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    height: 65px;
+    height: 70px;
     background-color: $bgColorLight;
     margin: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
     &-logo {
-      display: block;
+      display: flex;
+      justify-content: center;
       img {
         width: 60px;
+        &:hover{
+          opacity: 0.7;
+        }
       }
     }
 
@@ -26,6 +30,9 @@ header {
       li {
         display: inline;
         margin-right: 15px;
+        a {
+          font-size: 18px;
+        }
       }
     }
   }
