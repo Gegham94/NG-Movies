@@ -10,27 +10,9 @@
           <h2>Overview</h2>
           <p>{{tvShow.overview}}</p>
           <div class="stat">
-            <div class="label">Release Date:</div>
-            <div class="value">
-              {{tvShow.release_date | date: 'dd.MM.yyyy'}}
-            </div>
-          </div>
-          <div class="stat">
             <div class="label">Language:</div>
             <div class="value">
               {{tvShow.original_language | uppercase}}
-            </div>
-          </div>
-          <div class="stat">
-            <div class="label">Revenue:</div>
-            <div class="value">
-              {{tvShow.revenue | currency}}
-            </div>
-          </div>
-          <div class="stat">
-            <div class="label">Duration:</div>
-            <div class="value">
-              {{tvShow.runtime}} min
             </div>
           </div>
           <div class="stat">
