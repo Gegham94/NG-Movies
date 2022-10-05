@@ -9,11 +9,10 @@ import { MoviesService } from '../../services/movies.service';
   styleUrls: ['./genres.component.scss']
 })
 export class GenresComponent implements OnInit {
-
   moviesGenres: Genre[] = [];
   tvShowsGenres: Genre[] = [];
 
-  constructor(private moviesService: MoviesService, private tvShowsService: TvShowsService) { }
+  constructor(private moviesService: MoviesService, private tvShowsService: TvShowsService) {}
 
   ngOnInit(): void {
     this.moviesService.getMoviesGenres().subscribe((moviesGenresData) => {
@@ -24,5 +23,4 @@ export class GenresComponent implements OnInit {
       this.tvShowsGenres = tvShowsGenresData;
     });
   }
-
 }

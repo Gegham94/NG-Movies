@@ -11,14 +11,13 @@ import { IMAGES_SIZES } from '../../constants/images-size';
   styleUrls: ['./tv-show.component.scss']
 })
 export class TvShowComponent implements OnInit {
-
-  imagesSizes = IMAGES_SIZES
+  imagesSizes = IMAGES_SIZES;
   tvShow: Tv | null = null;
   tvShowVideos: TvVideo[] = [];
   tvShowImages: TvImages | null = null;
   tvShowCredits: TvCredits | null = null;
 
-  constructor(private route: ActivatedRoute, private tvShowsService: TvShowsService) { }
+  constructor(private route: ActivatedRoute, private tvShowsService: TvShowsService) {}
 
   ngOnInit(): void {
     this.route.params.pipe(first()).subscribe(({ id }) => {
@@ -29,7 +28,7 @@ export class TvShowComponent implements OnInit {
     });
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     console.log('Message: Component Destroyed');
   }
 
@@ -40,9 +39,9 @@ export class TvShowComponent implements OnInit {
   }
 
   getTvShowVideos(id: string) {
-    this.tvShowsService.getTvShowVideos(id).subscribe(tvShowVideoData => {
+    this.tvShowsService.getTvShowVideos(id).subscribe((tvShowVideoData) => {
       this.tvShowVideos = tvShowVideoData;
-    })
+    });
   }
 
   getTvShowImages(id: string) {
@@ -56,5 +55,4 @@ export class TvShowComponent implements OnInit {
       this.tvShowCredits = tvShowCreditsData;
     });
   }
-
 }

@@ -11,8 +11,7 @@ import { IMAGES_SIZES } from '../../constants/images-size';
   styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit, OnDestroy {
-
-  imagesSizes = IMAGES_SIZES
+  imagesSizes = IMAGES_SIZES;
   movie: Movie | null = null;
   movieVideos: MovieVideo[] = [];
   movieImages: MovieImages | null = null;
@@ -29,7 +28,7 @@ export class MovieComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     console.log('Message: Component Destroyed');
   }
 
@@ -40,9 +39,9 @@ export class MovieComponent implements OnInit, OnDestroy {
   }
 
   getMovieVideos(id: string) {
-    this.moviesService.getMovieVideos(id).subscribe(movieVideoData => {
+    this.moviesService.getMovieVideos(id).subscribe((movieVideoData) => {
       this.movieVideos = movieVideoData;
-    })
+    });
   }
 
   getMovieImages(id: string) {

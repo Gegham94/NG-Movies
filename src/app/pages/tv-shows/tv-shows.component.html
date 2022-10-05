@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="grid">
-    <div class="col-12">
+  <div class="grid mt-3 mb-3">
+    <div class="col-6">
       <div class="p-fluid">
         <span class="p-input-icon-left">
           <i class="pi pi-search"></i>
-          <input type="text" pInputText placeholder="Search" [(ngModel)]="searchValue" (change)="searchChanged()"/>
+          <input type="text" pInputText placeholder="Search" [(ngModel)]="searchValue" (change)="searchChanged()" />
         </span>
       </div>
     </div>
@@ -15,6 +15,6 @@
     </div>
   </div>
   <div>
-    <p-paginator [rows]="20" [totalRecords]="461" (onPageChange)="paginate($event)"></p-paginator>
+    <p-paginator [rows]="10" [totalRecords]="1001" (onPageChange)="paginate($event)"></p-paginator>
   </div>
 </div>

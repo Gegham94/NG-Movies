@@ -14,10 +14,9 @@ export class TvShowsComponent implements OnInit {
   genreId: string | null = null;
   searchValue: string | null = null;
 
-  constructor(private tvShowsService: TvShowsService, private route: ActivatedRoute) { }
+  constructor(private tvShowsService: TvShowsService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-
     this.route.params.pipe(take(1)).subscribe(({ genreId }) => {
       if (genreId) {
         this.genreId = genreId;
@@ -58,5 +57,4 @@ export class TvShowsComponent implements OnInit {
       }
     }
   }
-
 }

@@ -12,9 +12,7 @@ export class ItemsBannerComponent implements OnInit {
   @Input() tvShowitems: Tv[] = [];
   @Input() title: string = '';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

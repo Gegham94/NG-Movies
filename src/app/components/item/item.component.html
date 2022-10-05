@@ -2,8 +2,7 @@
   <a class="item" [routerLink]="'/movie/'+movieItemData.id">
     <div class="item-rating">
       <i class="app-icon">star</i>
-      <span>{{ movieItemData.vote_average }}</span
-      >/10
+      <span>{{ movieItemData.vote_average }}</span>/10
     </div>
     <div class="item-image">
       <img [src]="imagesSizes.medium + movieItemData.poster_path" [alt]="movieItemData.title" />
@@ -16,12 +15,11 @@
   <a class="item" [routerLink]="'/tv/'+tvShowitemData.id">
     <div class="item-rating">
       <i class="app-icon">star</i>
-      <span>{{ tvShowitemData.vote_average }}</span
-      >/10
+      <span>{{ tvShowitemData.vote_average }}</span>/10
     </div>
     <div class="item-image">
-      <img [src]="imagesSizes.medium + tvShowitemData.poster_path" [alt]="tvShowitemData.title" />
+      <img [src]="imagesSizes.medium + tvShowitemData.poster_path" [alt]="tvShowitemData.name" />
     </div>
-    <div class="item-title">{{ tvShowitemData.title }}</div>
+    <div class="item-title">{{ tvShowitemData.name }}</div>
   </a>
 </ng-container>
