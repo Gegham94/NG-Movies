@@ -9,11 +9,12 @@ import { Tv } from '../../models/tv';
 })
 export class ItemsBannerComponent implements OnInit {
   @Input() movieItems: Movie[] = [];
-  @Input() tvShowitems: Tv[] = [];
+  @Input() tvShowItems: Tv[] = [];
   @Input() movieTitle: string = '';
   @Input() tvTitle: string = '';
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 }

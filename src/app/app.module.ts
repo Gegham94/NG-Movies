@@ -7,7 +7,7 @@ import { TabViewModule } from 'primeng/tabview';
 import { ImageModule } from 'primeng/image';
 import { CarouselModule } from 'primeng/carousel';
 import { InputTextModule } from 'primeng/inputtext';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -49,7 +49,8 @@ import { TvShowComponent } from './pages/tv-show/tv-show.component';
     TabViewModule,
     ImageModule,
     CarouselModule,
-    InputTextModule
+    InputTextModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
