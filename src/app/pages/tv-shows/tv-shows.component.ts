@@ -13,6 +13,7 @@ export class TvShowsComponent implements OnInit {
   tvShows: Tv[] = [];
   genreId: string | null = null;
   searchValue: string | null = null;
+  totalPages: number = 0;
 
   constructor(private tvShowsService: TvShowsService, private route: ActivatedRoute) {}
 
@@ -29,7 +30,8 @@ export class TvShowsComponent implements OnInit {
 
   getPagedTvShows(page: number, searchKeyword?: string) {
     this.tvShowsService.searchTvShows(page, searchKeyword).subscribe((tvShows) => {
-      this.tvShows = tvShows;
+      this.tvShows = tvShows.results;
+      this.totalPages = tvShows.total_pages;
     });
   }
 
@@ -39,7 +41,7 @@ export class TvShowsComponent implements OnInit {
     });
   }
 
-  searchChanged() {
+  searchTv() {
     if (this.searchValue) {
       this.getPagedTvShows(1, this.searchValue);
     }

@@ -10,8 +10,7 @@ import { Tv } from '../../models/tv';
 export class ItemsBannerComponent implements OnInit {
   @Input() movieItems: Movie[] = [];
   @Input() tvShowItems: Tv[] = [];
-  @Input() movieTitle: string = '';
-  @Input() tvTitle: string = '';
+  @Input() title: string = '';
 
   constructor() {}
 

@@ -12,9 +12,19 @@ export class ItemComponent implements OnInit {
   @Input() movieItemData: Movie | null = null;
   @Input() tvShowItemData: Tv | null = null;
 
+  isSpinner: boolean = true;
+
   imagesSizes = IMAGES_SIZES;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.isSpinner = false;
+    }, 5000);
+  }
+
+  disableSpinner() {
+    this.isSpinner = false;
+  }
 }

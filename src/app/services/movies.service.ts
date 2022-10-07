@@ -59,9 +59,9 @@ export class MoviesService {
   searchMovies(page: number, searchValue?: string) {
     const uri = searchValue ? '/search/movie' : '/movie/popular'
     return this.http.get<MovieDto>(`${this.API_URL}${uri}?page=${page}&query=${searchValue}&api_key=${this.API_KEY}`)
-    .pipe(switchMap(res => {
-      return of (res.results);
-    }));
+    .pipe(res => {
+      return res;
+    });
   }
 
 }

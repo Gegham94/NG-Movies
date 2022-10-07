@@ -60,8 +60,8 @@ export class TvShowsService {
   searchTvShows(page: number, searchValue?: string) {
     const uri = searchValue ? '/search/tv' : '/tv/popular'
     return this.http.get<TvDto>(`${this.API_URL}${uri}?page=${page}&query=${searchValue}&api_key=${this.API_KEY}`)
-    .pipe(switchMap(res => {
-      return of (res.results);
-    }));
+    .pipe(res => {
+      return res;
+    });
   }
 }

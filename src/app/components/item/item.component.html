@@ -1,25 +1,37 @@
+
+<!-- MOVIE BANNER -->
 <ng-container *ngIf="movieItemData">
   <a class="item" [routerLink]="'/movie/' + movieItemData.id">
+    <ng-container *ngIf="isSpinner">
+      <mat-spinner></mat-spinner>
+    </ng-container>
     <div class="item-rating">
       <i class="app-icon">star</i>
       <span>{{ movieItemData.vote_average }}</span>/10
     </div>
     <div class="item-image">
-      <img [src]="imagesSizes.medium + movieItemData.poster_path" [alt]="movieItemData.title" />
+      <img [src]="imagesSizes.medium + movieItemData.poster_path" [alt]="movieItemData.title" (load)="disableSpinner()"/>
     </div>
     <div class="item-title">{{ movieItemData.title }}</div>
   </a>
 </ng-container>
 
+
+<!-- TV BANNER -->
 <ng-container *ngIf="tvShowItemData">
   <a class="item" [routerLink]="'/tv/' + tvShowItemData.id">
+    <ng-container *ngIf="isSpinner">
+      <mat-spinner></mat-spinner>
+    </ng-container>
     <div class="item-rating">
       <i class="app-icon">star</i>
       <span>{{ tvShowItemData.vote_average }}</span>/10
     </div>
     <div class="item-image">
-      <img [src]="imagesSizes.medium + tvShowItemData.poster_path" [alt]="tvShowItemData.name" />
+      <img [src]="imagesSizes.medium + tvShowItemData.poster_path" [alt]="tvShowItemData.name" (load)="disableSpinner()"/>
     </div>
     <div class="item-title">{{ tvShowItemData.name }}</div>
   </a>
 </ng-container>
+
+

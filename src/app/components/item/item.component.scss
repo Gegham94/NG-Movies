@@ -9,7 +9,9 @@
   border: 1px solid $lightGray;
 
   &-image {
+    height: 375px;
     img {
+      text-align: center;
       width: 100%;
       border-radius: 5px;
       height: 375px;
@@ -22,7 +24,7 @@
     display: flex;
     align-items: center;
     top: 10px;
-    left: 10px;
+    right: 10px;
     background-color: $bgColorLight;
     border-radius: 5px;
     padding: 5px 10px;
@@ -40,4 +42,21 @@
     margin: 0.5rem;
     height: 30px;
   }
+}
+
+::ng-deep.mat-progress-spinner {
+  position: absolute !important;
+  width: 100% !important;
+  min-height: 425px !important;
+}
+
+::ng-deep.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: $primaryColor;
+}
+
+::ng-deep.mat-progress-spinner svg {
+  width: 60px !important;
+  top: 40% !important;
+  left: 40% !important;
 }
