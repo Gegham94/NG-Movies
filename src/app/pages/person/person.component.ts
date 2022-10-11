@@ -43,6 +43,8 @@ export class PersonComponent implements OnInit {
   getPersonMovieCredits(id: string) {
     this.personesService.getPersonMovieCredits(id).subscribe((personMovieCreditsData) => {
       this.personCredits = personMovieCreditsData;
+      console.log(this.personCredits)
+
     });
   }
 }

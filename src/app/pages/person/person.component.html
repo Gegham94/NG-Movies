@@ -3,7 +3,8 @@
     <p-tabPanel header="Overviews">
       <div class="grid">
         <div class="col-12 md:col-3 md:col-3">
-          <img class="poster" [src]="imagesSizes.medium + person.profile_path" [alt]="person.name">
+          <p-image class="poster" [src]="imagesSizes.medium + person.profile_path" [alt]="person.name" [preview]="true">
+          </p-image>
         </div>
         <div class="col-12 md:col-9 md:col-9">
           <h2>Biography</h2>
@@ -53,12 +54,34 @@
     <p-tabPanel header="Photos">
       <div class="grid">
         <ng-container *ngFor="let personImage of personImages?.profiles">
-          <div class="col-12 md:col-4 lg:col-4">
-            <p-image [src]="imagesSizes.large + personImage.file_path" alt="Image" width="100%" [preview]="true">
-            </p-image>
+          <div class="col-12 md:col-3 lg:col-3">
+            <p-image [src]="imagesSizes.large + personImage.file_path" alt="Image" width="100%" [preview]="true"></p-image>
           </div>
         </ng-container>
       </div>
     </p-tabPanel>
   </p-tabView>
+  <div class="images-content">
+    <h2>Movies Posters</h2>
+    <p-carousel [numVisible]="10" [numScroll]="3" [autoplayInterval]="3200" *ngIf="personCredits" [value]="personCredits.cast">
+      <ng-template let-actor pTemplate="item">
+        <div class="actor">
+          <img [src]="imagesSizes.medium + actor.poster_path" alt="Image">
+          <span>{{ actor.name }}</span>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+  <div class="images-content">
+    <h2>Backdrop Photoes</h2>
+    <p-carousel [numVisible]="10" [numScroll]="3" [autoplayInterval]="3000" *ngIf="personCredits"
+      [value]="personCredits.cast">
+      <ng-template let-actor pTemplate="item">
+        <div class="actor">
+          <img [src]="imagesSizes.medium + actor.backdrop_path" alt="Image">
+          <span>{{ actor.name }}</span>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
 </ng-container>

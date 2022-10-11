@@ -23,6 +23,7 @@ export class VideoEmbedComponent implements OnInit {
         break;
     }
   }
+  
 
   getSafeUrl(url: string) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
