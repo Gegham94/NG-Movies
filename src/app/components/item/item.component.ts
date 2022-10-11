@@ -1,6 +1,8 @@
+import { style } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../models/movie';
 import { Tv } from '../../models/tv';
+import { Person } from '../../models/person';
 import { IMAGES_SIZES } from '../../constants/images-size';
 
 @Component({
@@ -11,6 +13,7 @@ import { IMAGES_SIZES } from '../../constants/images-size';
 export class ItemComponent implements OnInit {
   @Input() movieItemData: Movie | null = null;
   @Input() tvShowItemData: Tv | null = null;
+  @Input() personItemData: Person | null = null;
 
   isSpinner: boolean = true;
 

@@ -23,6 +23,8 @@ import { VideoEmbedComponent } from './components/video-embed/video-embed.compon
 import { GenresComponent } from './pages/genres/genres.component';
 import { TvShowsComponent } from './pages/tv-shows/tv-shows.component';
 import { TvShowComponent } from './pages/tv-show/tv-show.component';
+import { PersonesComponent } from './pages/persones/persones.component';
+import { PersonComponent } from './pages/person/person.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { TvShowComponent } from './pages/tv-show/tv-show.component';
     VideoEmbedComponent,
     GenresComponent,
     TvShowsComponent,
-    TvShowComponent
+    TvShowComponent,
+    PersonesComponent,
+    PersonComponent,
   ],
   imports: [
     BrowserModule,

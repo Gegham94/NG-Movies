@@ -34,4 +34,21 @@
   </a>
 </ng-container>
 
+<!-- PERSON BANNER -->
+<ng-container *ngIf="personItemData">
+  <a class="item" [routerLink]="'/person/' + personItemData.id">
+    <ng-container *ngIf="isSpinner">
+      <mat-spinner></mat-spinner>
+    </ng-container>
+    <div class="item-rating">
+      <i class="app-icon">star</i>
+      Popularity / <span>{{ personItemData.popularity }}</span>
+    </div>
+    <div class="item-image">
+      <img [src]="imagesSizes.medium + personItemData.profile_path" [alt]="personItemData.name" (load)="disableSpinner()"/>
+    </div>
+    <div class="item-title">{{ personItemData.name }}</div>
+  </a>
+</ng-container>
+
 

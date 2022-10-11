@@ -7,6 +7,8 @@ import { MoviesComponent } from './pages/movies/movies.component';
 import { GenresComponent } from './pages/genres/genres.component';
 import { TvShowsComponent } from './pages/tv-shows/tv-shows.component';
 import { TvShowComponent } from './pages/tv-show/tv-show.component';
+import { PersonesComponent } from './pages/persones/persones.component';
+import { PersonComponent } from './pages/person/person.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'tv', component: TvShowsComponent },
   { path: 'tv/genres/:genreId', component: TvShowsComponent },
   { path: 'tv/:id', component: TvShowComponent },
+  { path: 'person', component: PersonesComponent },
+  { path: 'person/:id', component: PersonComponent },
   { path: 'genres', component: GenresComponent },
   { path: '**', redirectTo: '' }
 ];

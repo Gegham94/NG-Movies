@@ -28,9 +28,7 @@ export class MovieComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
-    console.log('Message: Component Destroyed');
-  }
+  ngOnDestroy() {}
 
   getMovie(id: string) {
     this.moviesService.getMovie(id).subscribe((movie) => {

@@ -28,9 +28,7 @@ export class TvShowComponent implements OnInit {
     });
   }
 
-  ngOnDestroy() {
-    console.log('Message: Component Destroyed');
-  }
+  ngOnDestroy() {}
 
   getTvShow(id: string) {
     this.tvShowsService.getTvShow(id).subscribe((tvShow) => {
